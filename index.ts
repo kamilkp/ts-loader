@@ -109,6 +109,7 @@ function formatErrors(diagnostics: typescript.Diagnostic[], instance: TSInstance
                 return {
                     message: `${'('.white}${(lineChar.line+1).toString().cyan},${(lineChar.character+1).toString().cyan}): ${messageText.red}`,
                     rawMessage: messageText,
+                    fileName: diagnostic.file.fileName.red,
                     location: {line: lineChar.line+1, character: lineChar.character+1},
                     loaderSource: 'ts-loader'
                 };
